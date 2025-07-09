@@ -272,8 +272,11 @@
                 "https://victorxx.github.io/encaminhargithub/",
                 "https://victorxx.github.io/encaminhargithub/saib"
 
-            ]
+            ];
+            const randomizar=links[Math.floor(Math.random()* links.length)];
+            document.getElementById('novo').href=randomizar;
         }
+        setInterval(iniciar,900);
 
     </script>
 
