@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página de notícias de Vitória-ES e São Paulo com anúncios intercalados.">
+    <meta name="keywords" content="notícias, Vitória, São Paulo, propaganda">
+    <meta name="author" content="Seu Nome">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Notícias - Vitória-ES e São Paulo">
+    <meta property="og:description" content="Página com notícias de Vitória-ES e São Paulo, além de propagandas intercaladas.">
+    <meta property="og:image" content="https://exemplo.com/imagem.jpg">
+    <meta property="og:url" content="https://exemplo.com/pagina">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Notícias - Vitória-ES e São Paulo">
+    <meta name="twitter:description" content="Página com notícias de Vitória-ES e São Paulo, além de propagandas intercaladas.">
+    <meta name="twitter:image" content="https://exemplo.com/imagem.jpg">
+    <meta name="twitter:url" content="https://exemplo.com/pagina">
+    <meta name="generator" content="HTML5">
+    <meta name="rating" content="General">
+    <title>Notícias de Vitória-ES e São Paulo</title>
+
+    <style>
+        /* Estilos globais */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .news-section {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .news {
+            width: 48%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .news h2 {
+            font-size: 1.5em;
+            color: #2e3d4d;
+        }
+
+        .news ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .news ul li {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        /* Estilos para as propagandas */
+        .ad {
+            background-color: #e1e1e1;
+            height: 200px;
+            width: 100%;
+            margin: 20px 0;
+            text-align: center;
+            line-height: 200px;
+            font-size: 1.5em;
+            color: #555;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilo para caracteres especiais */
+        .special-chars {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 1.5em;
+            color: #2e3d4d;
+            text-align: center;
+        }
+
+        .unifocoo {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 1.2em;
+            color: #888;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        .unifocoo span {
+            color: #ff4500;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Notícias de Vitória-ES e São Paulo</h1>
+    </header>
+           <div class="ad">
+           <a href="#" target="_blank" id="novo">
+                  <img src="2.gif" width="100%" height="200px">
+            </a>
+        </div>
+
+    <div class="container">
+        <div class="news-section">
+            <!-- Notícias de Vitória-ES -->
+            <div class="news" id="news-vitoria">
+                <h2>Notícias de Vitória-ES</h2>
+                <ul id="vitoria-list"></ul>
+            </div>
+
+            <!-- Notícias de São Paulo -->
+            <div class="news" id="news-sp">
+                <h2>Notícias de São Paulo</h2>
+                <ul id="sp-list"></ul>
+            </div>
+        </div>
+
+        <!-- Propaganda 1 -->
+ 
+
+        <!-- Propaganda 2 -->
+        <div class="ad">
+            <a href="https://www.airbnb.com.br/r/saibvictore?s=6&t=061n0g">
+                  <img src="1.jpg" width="100%" height="200px">
+            </a>
+          
+        </div>
+
+        <div class="unifocoo">
+            <p>Texto com letras, números e caracteres especiais: <span class="special-chars" id="special-chars"></span></p>
+        </div>
+    </div>
+
+    <script>
+        // Arrays de notícias de Vitória-ES e São Paulo
+        const noticiasVitoria = [
+            "Vitória-ES se prepara para a inauguração do novo hospital regional.",
+            "Prefeitura de Vitória anuncia novos projetos para revitalização do centro.",
+            "O festival de música em Vitória-ES atrai mais de 100 mil pessoas.",
+            "Vitória-ES está investindo no turismo com novas atrações."
+        ];
+
+        const noticiasSP = [
+            "São Paulo sedia importante conferência de tecnologia.",
+            "SP anuncia novos investimentos no transporte público.",
+            "São Paulo tem aumento no número de empregos no setor de tecnologia.",
+            "SP enfrenta desafios no trânsito durante a implementação do novo sistema."
+        ];
+
+        // Função para inserir notícias nas seções
+        function carregarNoticias() {
+            const vitoriaList = document.getElementById("vitoria-list");
+            const spList = document.getElementById("sp-list");
+
+            // Carregar notícias de Vitória
+            noticiasVitoria.forEach(noticia => {
+                const li = document.createElement("li");
+                li.textContent = noticia;
+                vitoriaList.appendChild(li);
+            });
+
+            // Carregar notícias de São Paulo
+            noticiasSP.forEach(noticia => {
+                const li = document.createElement("li");
+                li.textContent = noticia;
+                spList.appendChild(li);
+            });
+        }
+
+        // Função para gerar caracteres aleatórios no final da página
+        function gerarCaracteresAleatorios() {
+            const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_-+=<>?';
+            let resultado = '';
+            const comprimento = 30; // Define o comprimento da string gerada
+
+            for (let i = 0; i < comprimento; i++) {
+                const indiceAleatorio = Math.floor(Math.random() * caracteres.length);
+                resultado += caracteres[indiceAleatorio];
+            }
+
+            document.getElementById("special-chars").textContent = resultado;
+        }
+
+        // Chamar funções
+        carregarNoticias();
+        gerarCaracteresAleatorios();
+    </script>
+
+    <script>
+        function iniciar(){
+            const links=[
+                "https://victorxx.github.io/redirecionando001git/",
+                "https://victorxx.github.io/encaminhargithub/",
+                "https://victorxx.github.io/encaminhargithub/saib"
+
+            ]
+        }
+
+    </script>
+
+</body>
+</html>
